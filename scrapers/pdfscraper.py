@@ -1,4 +1,5 @@
 import pandas as pd # library for data manipulation
+import numpy as np
 import pdfplumber # library for scraping pdfs
 # from tqdm import tqdm
 import time
@@ -40,3 +41,7 @@ for j in range(len(pages)):
 
         except:
             continue
+
+arr = np.array(pg)
+
+pd.DataFrame(data = {"programs":arr}).to_excel('programs.xlsx', index = False)
