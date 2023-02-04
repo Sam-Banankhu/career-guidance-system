@@ -1,8 +1,7 @@
 import pandas as pd # library for data manipulation
 import numpy as np
 import pdfplumber # library for scraping pdfs
-# from tqdm import tqdm
-import time
+
 
 path = "//home/pandas/Documents/Downloads/2021-22 PUS Generic Application Form mod.pdf"
 
@@ -35,13 +34,15 @@ for j in range(len(pages)):
     #             print(pages[j].extract_table()[i+1][9].replace("\n",''))
 
 
-                print()
+                # print()
             else:
                 continue
 
         except:
             continue
+#     bar.next()
+# bar.finish()
 
 arr = np.array(pg)
-df_path = '/home/pandas/Documents/career-guidance-system/datasets'
-pd.DataFrame(data = {"programs":arr}).to_excel(df_path+'programs.xlsx', index = False)
+
+pd.DataFrame(data = {"programs":arr}).to_excel('/home/pandas/Documents/career-guidance-system/datasets/programs.xlsx', index = False)
