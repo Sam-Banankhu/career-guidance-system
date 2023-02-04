@@ -4,7 +4,7 @@ import pdfplumber # library for scraping pdfs
 # from tqdm import tqdm
 import time
 
-path = "/home/pandas/Downloads/2021-22 PUS Generic Application Form mod.pdf"
+path = "//home/pandas/Documents/Downloads/2021-22 PUS Generic Application Form mod.pdf"
 
 pdf = pdfplumber.open(path)
 # print(pdf.metadata)
@@ -30,7 +30,7 @@ for j in range(len(pages)):
                 # Find the index of the substring "sample"
                 start_index = course.find('Bachelor')
 #                 print(pages[j].extract_table()[i+1][3].replace("\n",''))
-                print(course[start_index:])
+                # print(course[start_index:])
                 pg.append(course[start_index:])
     #             print(pages[j].extract_table()[i+1][9].replace("\n",''))
 
