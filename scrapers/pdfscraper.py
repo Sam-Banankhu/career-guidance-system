@@ -43,5 +43,5 @@ for j in range(len(pages)):
             continue
 
 arr = np.array(pg)
-
-pd.DataFrame(data = {"programs":arr}).to_excel('programs.xlsx', index = False)
+df_path = '/home/pandas/Documents/career-guidance-system/datasets'
+pd.DataFrame(data = {"programs":arr}).to_excel(df_path+'programs.xlsx', index = False)
