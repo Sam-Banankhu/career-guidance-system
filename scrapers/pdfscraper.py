@@ -13,10 +13,10 @@ pages = pdf.pages
 
 # pages[1].extract_table()[7][0].replace("\n",'')
 
-string = "This is a sample string"
+# string = "This is a sample string"
 
 # Find the index of the substring "sample"
-start_index = string.find('Bachelor')
+# start_index = string.find('Bachelor')
 
 # Print the portion of the string starting from the index of the substring "sample"
 # print(string[start_index:])
