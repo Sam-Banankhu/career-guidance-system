@@ -17,9 +17,6 @@ pages = pdf.pages
 # Find the index of the substring "sample"
 # start_index = string.find('Bachelor')
 
-# Print the portion of the string starting from the index of the substring "sample"
-# print(string[start_index:])
-
 pg = []
 for j in range(len(pages)):
     for i in range(len(pages[j].extract_table())):
