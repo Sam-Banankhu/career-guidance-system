@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine Learning Web App</title>
+</head>
+<body>
+	<h1>Machine Learning Web App</h1>
+	<form id="form">
+		<label for="input">Input:</label>
+		<input type="text" id="input" name="input">
+		<button type="submit">Predict</button>
+	</form>
+	<div id="output"></div>
+	<script>
+		const form = document.getElementById("form");
+		const output = document.getElementById("output");
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+			const input = document.getElementById("input").value;
+			fetch("http://localhost:9000/predict", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					"data": input
+				})
+			})
+			.then((response) => response.json())
+			.then((data) => {
+				output.innerHTML = data.prediction;
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+		});
+	</script>
+</body>
+</html>
